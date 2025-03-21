@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+/* Google Fonts */
+@font-face {
+  font-family: "Ballet";
+  src: url("./assets/fonts/Ballet_48pt-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Boldonse";
+  src: url("./assets/fonts/Boldonse-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Ultra";
+  src: url("./assets/fonts/Ultra-Regular.ttf") format("truetype");
+}
+
+@theme {
+  /* Font Family */
+  --font-ballet: "Ballet", sans-serif;
+  --font-boldonse: "Boldonse", sans-serif;
+  --font-ultra: "Ultra", sans-serif;
+  /* --default-font-family: "Poppins", "sans-serif"; */
+}
