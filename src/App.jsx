@@ -1,9 +1,11 @@
 import Hero from "./layout/Hero";
+import Info from "./layout/Info";
 
 const App = () => {
   return (
     <>
       <Hero />
+      <Info />
     </>
   );
 };

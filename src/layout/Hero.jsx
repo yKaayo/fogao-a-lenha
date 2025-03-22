@@ -1,7 +1,38 @@
+import { useState } from "react";
+
+// Videos
 import video1 from "../assets/videos/video1.mp4";
+import video2 from "../assets/videos/video2.mp4";
+import video3 from "../assets/videos/video3.mp4";
 import textureVideo from "../assets/videos/texture.mp4";
 
+// Icons
+import arrowRight from "../assets/icons/arrowRight.svg";
+import arrowLeft from "../assets/icons/arrowLeft.svg";
+
 const Hero = () => {
+  const videos = [video1, video2, video3];
+
+  const [video, setVideo] = useState(videos[0]);
+
+  function handleLeftClick() {
+    let previousVideoIndex = videos.indexOf(video);
+
+    previousVideoIndex === 0
+      ? (previousVideoIndex = videos.length - 1)
+      : (previousVideoIndex -= 1);
+
+    setVideo(videos[previousVideoIndex]);
+  }
+
+  function handleRightClick() {
+    let nextVideo = videos.indexOf(video);
+
+    videos.length - 1 == nextVideo ? (nextVideo = 0) : (nextVideo += 1);
+
+    setVideo(videos[nextVideo]);
+  }
+
   const time = new Date();
 
   const day = time.getDate();
@@ -26,31 +57,45 @@ const Hero = () => {
   return (
     <>
       <video
+        key={video}
         muted
         autoPlay
         loop
         className="absolute top-0 left-0 h-full w-full object-cover"
       >
-        <source src={video1} type="video/mp4" className="" />
+        <source src={video} type="video/mp4" />
       </video>
 
       <video
         muted
         autoPlay
         loop
-        className="absolute top-0 left-0 h-full w-full object-cover opacity-15"
+        className="absolute top-0 left-0 h-full w-full object-cover opacity-20"
       >
         <source src={textureVideo} type="video/mp4" />
       </video>
 
       <main className="relative z-[1] container mx-auto flex h-screen items-center justify-center px-5 py-5 md:px-0 md:py-10">
-        <div className="absolute top-5 flex w-full items-center justify-between px-5 md:top-10 gap-5">
-          <h1 className="font-ultra text-lg sm:text-2xl text-white">FOGÃO A LENHA</h1>
+        <div className="absolute top-5 flex w-full items-center justify-between gap-5 px-5 md:top-10">
+          <h1 className="font-ultra text-lg text-white sm:text-2xl">
+            FOGÃO A LENHA
+          </h1>
 
-          <div className="font-boldonse text-xs sm:text-base flex gap-3 text-white">
-            <p>{day}</p>
-            <p>{month}</p>
-            <p>{year}</p>
+          <div className="flex flex-col items-center gap-2">
+            <div className="font-boldonse flex gap-3 text-xs text-white sm:text-base">
+              <p>{day}</p>
+              <p>{month}</p>
+              <p>{year}</p>
+            </div>
+            <div className="font-boldonse flex gap-3 text-xs text-white sm:text-base">
+              <button className="cursor-pointer" onClick={handleLeftClick}>
+                <img src={arrowLeft} alt="Ícone para mudar de canal" />
+              </button>
+              <p>CANAL {videos.indexOf(video) + 1}</p>
+              <button className="cursor-pointer" onClick={handleRightClick}>
+                <img src={arrowRight} alt="Ícone para mudar de canal" />
+              </button>
+            </div>
           </div>
         </div>
 
