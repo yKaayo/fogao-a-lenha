@@ -60,13 +60,13 @@ const Hero = () => {
         muted
         autoPlay
         loop
-        className="absolute top-0 left-0 -z-[2] h-full w-full object-cover"
+        className="absolute top-0 left-0 -z-[2] h-screen w-full object-cover"
       >
         <source src={video} type="video/mp4" />
       </video>
 
       <main className="relative z-[1] container mx-auto flex h-screen items-center justify-center px-5 py-5 md:px-0 md:py-10">
-        <div className="absolute top-5 flex w-full items-center justify-between gap-5 px-5 md:top-10">
+        <div className="absolute top-5 flex w-full items-center justify-between gap-5 px-2 sm:px-5 md:top-10">
           <h1 className="font-ultra text-lg text-white sm:text-2xl">
             FOGÃO A LENHA
           </h1>
@@ -77,7 +77,7 @@ const Hero = () => {
               <p>{month}</p>
               <p>{year}</p>
             </div>
-            <div className="font-boldonse flex gap-3 text-xs text-white sm:text-base">
+            <div className="font-boldonse flex gap-3 text-xs text-white sm:text-base items-center">
               <button className="cursor-pointer" onClick={handleLeftClick}>
                 <img src={arrowLeft} alt="Ícone para mudar de canal" />
               </button>
