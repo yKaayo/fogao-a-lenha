@@ -12,6 +12,16 @@
 }
 
 @font-face {
+  font-family: "KiteOne";
+  src: url("./assets/fonts/KiteOne-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("./assets/fonts/OpenSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
   font-family: "Ultra";
   src: url("./assets/fonts/Ultra-Regular.ttf") format("truetype");
 }
@@ -20,6 +30,8 @@
   /* Font Family */
   --font-ballet: "Ballet", sans-serif;
   --font-boldonse: "Boldonse", sans-serif;
+  --font-kiteone: "KiteOne", sans-serif;
+  --font-opensans: "OpenSans", sans-serif;
   --font-ultra: "Ultra", sans-serif;
   /* --default-font-family: "Poppins", "sans-serif"; */
 }

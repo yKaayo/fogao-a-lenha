@@ -4,7 +4,6 @@ import { useState } from "react";
 import video1 from "../assets/videos/video1.mp4";
 import video2 from "../assets/videos/video2.mp4";
 import video3 from "../assets/videos/video3.mp4";
-import textureVideo from "../assets/videos/texture.mp4";
 
 // Icons
 import arrowRight from "../assets/icons/arrowRight.svg";
@@ -61,18 +60,9 @@ const Hero = () => {
         muted
         autoPlay
         loop
-        className="absolute top-0 left-0 h-full w-full object-cover"
+        className="absolute top-0 left-0 -z-[2] h-full w-full object-cover"
       >
         <source src={video} type="video/mp4" />
-      </video>
-
-      <video
-        muted
-        autoPlay
-        loop
-        className="absolute top-0 left-0 h-full w-full object-cover opacity-20"
-      >
-        <source src={textureVideo} type="video/mp4" />
       </video>
 
       <main className="relative z-[1] container mx-auto flex h-screen items-center justify-center px-5 py-5 md:px-0 md:py-10">
