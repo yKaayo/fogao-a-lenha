@@ -2,7 +2,7 @@ import Book from "../components/Book";
 
 // 3D Models
 import book1 from '../assets/3d/book.glb'
-import book2 from '../assets/3d/super_mario_galaxy_-_rosalinas_storybook.glb'
+import book2 from '../assets/3d/3d_book.glb'
 
 const Books = () => {
   return (
@@ -37,8 +37,10 @@ const Books = () => {
         </p>
       </section>
 
-      <Book model={book1} />
-      <Book model={book2} />
+      <div className="h-[80vh] w-full">
+        <Book model={book1} rotationXDefault={Math.PI} rotationYDefault={Math.PI / 2} rotationZDefault={Math.PI / 2} scale={[1, 1, 1]} /></div>
+      <div className="h-[80vh] w-full">
+        <Book model={book2} rotationXDefault={Math.PI} rotationYDefault={Math.PI/2} rotationZDefault={Math.PI/2} scale={[3, 3, 3]} /></div>
     </div>
   );
 };

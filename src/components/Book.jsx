@@ -1,19 +1,20 @@
 import { Canvas } from "@react-three/fiber";
-import { useGLTF, OrbitControls } from "@react-three/drei";
+import BookModel from "./BookModel";
 
-const Book = ({ model }) => {
-  const { scene } = useGLTF(model);
-
+const Book = ({ model, rotationXDefault, rotationYDefault, rotationZDefault, scale }) => {
   return (
     <Canvas>
-      <mesh>
-        <ambientLight intensity={0.1} />
-        <directionalLight position={[0, 0, 5]} />
-        <primitive object={scene} />
-        <OrbitControls />
-      </mesh>
+      <ambientLight intensity={0.6} />
+      <directionalLight position={[0, 0, 2]} />
+      <BookModel
+        model={model}
+        rotationXDefault={rotationXDefault}
+        rotationYDefault={rotationYDefault}
+        rotationZDefault={rotationZDefault}
+        scale={scale}
+      />
     </Canvas>
   );
 };
 
-export default Book;
+export default Book
